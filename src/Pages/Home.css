@@ -1,0 +1,89 @@
+/* HomePage.css */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin-top: 200px;
+    width: 600px;
+    background: #fff;
+    padding-bottom: 30px;
+  }
+  
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(59, 54, 54);
+    z-index: 1000;
+    display: flex; /* Add flex display to center child items */
+    justify-content: flex-start; /* Align children to the start */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .iyte-logo {
+    height: 40px; /* Slightly less than the top bar's height for padding */
+    width: auto; /* Maintain aspect ratio */
+    margin-left: 50px; /* Push to the right, outside the sidebar */
+    left: 10px;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px; /* Height of the top bar to prevent overlap */
+    width: 50px;
+    height: calc(100% - 50px); /* Adjust height to account for the top bar */
+    background-color: rgb(59, 54, 54);
+    z-index: 1000;
+  }
+  
+  .announcement-section {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    border: 5px solid black;
+  }
+
+  .text{
+    color: #121212;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .sidebar-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    font-size: 40px;
+    margin-top: 30px;
+    font-family: 'Futura', sans-serif;
+}
+
+    .title-underline{
+    width: 299px;
+    height: 4px;
+    background: #3a3232;
+    border-radius: 9px;
+    }
+  
+  /* Additional styling for text color */
+  .announcement-section h2, .announcement-section p {
+    color: #ffffff;
+  }
+  
