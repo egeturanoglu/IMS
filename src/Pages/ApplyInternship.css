@@ -1,0 +1,85 @@
+/* ApplyInternship.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.top-bar {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.iyte-logo {
+    height: 30px;
+    width: auto;
+}
+
+.companies-list-container {
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.companies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.company-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.company-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.company-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.company-dropdown {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.dropdown-button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block; /* Makes the button take the full width */
+}
+
+.dropdown-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.input-file {
+    display: none;
+}

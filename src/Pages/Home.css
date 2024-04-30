@@ -1,0 +1,110 @@
+/* Adjust the container to ensure proper layout */
+.container {
+  display: flex;
+  flex-direction: column; /* Change to column to stack sidebar and main content */
+  height: 100vh;
+  align-items: center; /* Center children horizontally */
+  justify-content: flex-start; /* Align content to the top */
+  padding: 20px;
+  gap: 20px; /* Space between sidebar and announcement section */
+}
+
+/* Update announcement-section for better visibility and alignment */
+.announcement-section {
+  width: 80%; /* Adjust width to take up less space */
+  padding: 20px;
+  margin-top: 20px; /* Add some margin above for separation */
+  background-color: #f8f8f8; /* Light background for contrast */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid #ccc; /* Subtle border */
+}
+
+.title {
+  font-size: 24px; /* Larger font size for title */
+  color: #333; /* Dark color for better readability */
+}
+
+.text {
+  color: #666; /* Dark grey for readability */
+  font-size: 16px; /* Optimal font size for body text */
+  text-align: center; /* Center align text */
+}
+
+.title-underline {
+  height: 2px;
+  background: #3a3232;
+  width: 50%; /* Reduce width for aesthetic */
+}
+
+.sidebar {
+  position: static; /* Adjust if needed */
+  width: 100%;
+  max-width: 500px; /* Limit width for a neater appearance */
+  max-height: 100vh; /* Adjust based on your layout, 90vh ensures it's less than the viewport height */
+  padding-right: 5px; /* Add padding to prevent scrollbar from hiding content */
+}
+
+/* Ensure proper layout of sidebar buttons and info-blocks */
+.sidebar-btn, .info-blocks {
+  width: 100%;
+}
+
+/* Additional tweaks to ensure consistency */
+.info-blocks {
+  padding: 10px;
+  background-color: #444; /* Dark background for consistency with sidebar */
+  color: white; /* Text color for readability */
+}
+
+/* Style for sidebar links to mimic buttons */
+.link-button {
+  display: block;
+  padding: 10px 20px;
+  margin: 5px 0;
+  background-color: #444; /* Adjust color to match your theme */
+  color: white;
+  text-decoration: none; /* Remove underline from links */
+  border-radius: 5px; /* Optional: add border radius for rounded corners */
+  text-align: center; /* Center text within the button */
+  font-weight: bold; /* Make text bold */
+  cursor: pointer; /* Change cursor to pointer to indicate clickable */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.link-button:hover {
+  background-color: #555; /* Slightly darker on hover for visual feedback */
+}
+
+/* Ensure dropdown content does not overflow off the screen */
+.dropdown-content {
+  position: relative; /* Adjust positioning */
+  background-color: #f1f1f1; /* Your preference for background */
+  border-radius: 5px; /* Rounded corners for dropdown */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Shadow for dropdown */
+  z-index: 1; /* Keeps dropdown on top of other content */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Additional styling for nested dropdowns to manage overflow */
+.nested-dropdown-content, .nested-dropdown {
+  overflow-y: auto; /* Allow scrolling within nested dropdowns */
+  max-height: 200px; /* Limit height and enable scroll */
+}
+
+/* Scrollbar styling for better aesthetics */
+.sidebar::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar itself */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered */
+}
