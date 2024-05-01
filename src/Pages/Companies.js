@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Companies.css';
 import iyte_icon from '../Components/Assets/iyte-logo.png';
 import user_icon from '../Components/Assets/user.png';
-import settings_icon from '../Components/Assets/settings.png'
-import internship_icon from '../Components/Assets/internship.png'
-import documents_icon from '../Components/Assets/documents.png'
-import admin_icon from '../Components/Assets/shield.png'
-import company_icon from '../Components/Assets/company.png'
-
+import settings_icon from '../Components/Assets/settings.png';
+import internship_icon from '../Components/Assets/internship.png';
+import documents_icon from '../Components/Assets/documents.png';
+import admin_icon from '../Components/Assets/shield.png';
+import company_icon from '../Components/Assets/company.png';
 
 function Companies() {
-  // States to manage the visibility of dropdowns for each button
   const [showDropdown, setShowDropdown] = useState({
     btn1: false,
-    btn1_1: false, // Nested dropdown for btn1
-    btn1_2: false, // Another nested dropdown for btn1
+    btn1_1: false,
+    btn1_2: false,
     btn2: false,
     btn2_1: false, 
     btn2_2: false,
@@ -23,39 +22,31 @@ function Companies() {
     btn3_2: false,
     btn4: false,
   });
-  
-  
 
-  // Toggle dropdown visibility
-  // Toggle dropdown section visibility
   const toggleDropdown = (btn) => {
     setShowDropdown((prev) => ({ ...prev, [btn]: !prev[btn] }));
   };
-  
-
 
   return (
-    <div className="container">
-
+    <div className="Companies-layout">
       <div className="top-bar">
         <img src={iyte_icon} alt="" className="iyte-logo" />
       </div>
       
       <div className="sidebar">
-      <div className="info-blocks">
+        <div className="info-blocks">
           <div className="internship-info">
-            
             <img src={admin_icon} alt="" className="admin-icon" />
             <h4>Internship Coordinator</h4>
             <div>Name: -</div>
           </div>
           <div className="company-info">
-            
             <img src={company_icon} alt="" className="company-icon" />
             <h4>Company</h4>
             <div>Name: -</div>
           </div>
         </div>
+
         {/* Button 1 */}
         <div
           className="sidebar-btn"
@@ -66,13 +57,13 @@ function Companies() {
           Internship Operations
           {showDropdown.btn1 && (
             <div className="dropdown-content">
-              -Apply for Internship
+              <Link to="/apply" className="link-button">Apply for Internship</Link>
               <div
                 className="nested-dropdown"
                 onMouseEnter={() => toggleDropdown('btn1_1')}
                 onMouseLeave={() => toggleDropdown('btn1_1')}
               >
-              -Companies
+              <Link to="/companies" className="link-button">Companies</Link>
                 
               </div>
               <div
@@ -80,10 +71,10 @@ function Companies() {
                 onMouseEnter={() => toggleDropdown('btn1_2')}
                 onMouseLeave={() => toggleDropdown('btn1_2')}
               >
-                -Upload Form
-                {showDropdown.btn1_2 && <div className="nested-dropdown-content">-- Upload Application Form</div>}
-                {showDropdown.btn1_2 && <div className="nested-dropdown-content">-- Upload Summer Practice Report</div>}
-                {showDropdown.btn1_2 && <div className="nested-dropdown-content">-- Upload Survey</div>}
+                <Link to="" className="link-button">Upload Documents</Link>
+                {showDropdown.btn1_2 && <div className="mlink-button"> Upload Application Form</div>}
+                {showDropdown.btn1_2 && <div className="mlink-button"> Upload Summer Practice Report</div>}
+                {showDropdown.btn1_2 && <div className="mlink-button"> Upload Survey</div>}
               </div>
             </div>
           )}
@@ -99,13 +90,13 @@ function Companies() {
           User Actions
           {showDropdown.btn2 && (
             <div className="dropdown-content">
-              -Profile
+              <Link to="/profile" className="link-button">Profile</Link>
               <div
                 className="nested-dropdown"
                 onMouseEnter={() => toggleDropdown('btn2_1')}
                 onMouseLeave={() => toggleDropdown('btn2_1')}
               >
-                -UBYS
+                <a href="https://ubys.iyte.edu.tr" className="link-button" target="_blank" rel="noopener noreferrer">UBYS</a>
                 
               </div>
 
@@ -119,24 +110,24 @@ function Companies() {
           onMouseLeave={() => toggleDropdown('btn3')}
         >
           <img src={documents_icon} alt="Person" className="documents-icon" />
-          Documents
+          General Documents
           {showDropdown.btn3 && (
             <div className="dropdown-content">
-              -User Guide
+              <Link to="" className="link-button">User Guide</Link>
               <div
                 className="nested-dropdown"
                 onMouseEnter={() => toggleDropdown('btn3_1')}
                 onMouseLeave={() => toggleDropdown('btn3_1')}
               >
-                -SGK Employment Certificate
-                {showDropdown.btn3_1 && <div className="nested-dropdown-content">-- Download</div>}
+                <Link to="" className="link-button">SGK Employment Certificate</Link>
+                {showDropdown.btn3_1 && <div className="mlink-button"> Download</div>}
               </div>
               <div
                 className="nested-dropdown"
                 onMouseEnter={() => toggleDropdown('btn3_2')}
                 onMouseLeave={() => toggleDropdown('btn3_2')}
               >
-                -IYTE
+                <Link to="" className="link-button"><a href="https://iyte.edu.tr" className="link-button" target="_blank" rel="noopener noreferrer">IZTECH Page</a></Link>
                 
               </div>
             </div>
@@ -152,13 +143,13 @@ function Companies() {
           General Settings
           {showDropdown.btn4 && (
             <div className="dropdown-content">
-              -User Settings
+              <Link to="/user_settings" className="link-button">User Settings</Link>
               <div
                 className="nested-dropdown"
                 onMouseEnter={() => toggleDropdown('btn4_1')}
                 onMouseLeave={() => toggleDropdown('btn4_1')}
               >
-                -Help
+                <a href="https://ubysdestek.iyte.edu.tr" className="link-button" target="_blank" rel="noopener noreferrer">Help</a>
                 
               </div>
               <div
@@ -166,19 +157,15 @@ function Companies() {
                 onMouseEnter={() => toggleDropdown('btn4_2')}
                 onMouseLeave={() => toggleDropdown('btn4_2')}
               >
-                -Log Out
+                <Link to="/log_out" className="link-button">Log out</Link>
                 
               </div>
             </div>
           )}
         </div>
+
       </div>
 
-
-
-      <div className="">
-      
-      </div>
     </div>
   );
 }
